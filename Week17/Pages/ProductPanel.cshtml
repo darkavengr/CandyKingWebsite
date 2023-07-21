@@ -1,0 +1,23 @@
+﻿@page
+@model Week17.Pages.ProductPanelModel
+@{
+}
+
+<a class="btn btn-sm btn-danger order-button float-right" asp-page="/AdminPanel">Add a product</a>
+
+<div>
+        @foreach (var product in Model.Products)
+        {
+              <div class="itemcolumn">
+                <h3>@product.Name</h3>
+                                
+                <img class="itemimage" src="@product.ProductImage" alt="Image of @product.Name" />
+                <p class="description">@product.Description</p>
+                <p class="price">@product.Price</p>                
+                
+                <a class="btn btn-sm btn-danger order-button float-right" asp-page="/AdminPanel" asp-route-id="@product.Id">Modify this product</a>             
+                <a class="btn btn-sm btn-danger order-button float-right" asp-page="/AddProduct" asp-route-id="@product.Id" asp-page-handler="Delete">Delete</a>        
+              </div>
+
+        }
+</div>

@@ -1,0 +1,44 @@
+﻿@page
+@model Week17.Pages.AboutModel
+@{
+}
+
+<div class="aboutus">
+
+<h1> About us </h1>
+
+<p> We are a company that aims to offer cheap candy, fast with a wide range  of products for the whole family.
+<br />
+<p> Contact us: <br>
+    <br />
+    Candy King Ltd. <br />
+    Redfield Road <br />
+    Lenton Industrial Estate <br />
+    Nottingham <br />
+    NG7 2UJ. <br />
+    Phone: 0115 918 1521 <br />
+
+    Or send us an email: <br />
+    <br />
+
+    <form action="mailto:matt@boote.myzen.co.uk" method="post" enctype="multipart/form-data" name="sendemail">
+        <div class="loginformboxleft">
+          <label for="SenderName">Name:</label>
+        </div>
+
+        <div class="formboxright">
+           <input type="text" name="SenderName" />            
+        </div>
+
+        <div class="formboxleft">
+          <label for="message">Message: </label>
+        </div>
+
+        <div class="formboxright">           
+            <textarea name="message" rows=10 cols=20></textarea>
+        </div>
+
+        <input type="submit" class="submitbutton" value="submit" />
+    </form>
+
+</div>

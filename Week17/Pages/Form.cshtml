@@ -1,0 +1,31 @@
+﻿@page
+@model Week17.Pages.FormModel
+
+@{
+}
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+<p>
+    @Model.Message
+
+    @ViewData["Submitted"])
+
+</p>
+
+
+<form method="post">
+
+    <span asp-validation-for="name" class="text-danger"></span>
+
+    <label> Name</label><p>
+        <input type="text" asp-for="name" autofocus required>
+    </p>
+    <label> E-Mail</label><p>
+        <input type="text" asp-for="email" required>
+    </p>
+
+
+    <input class="button" type="submit" id="submitbutton">
+</form>

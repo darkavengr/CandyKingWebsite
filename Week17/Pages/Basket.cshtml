@@ -1,0 +1,39 @@
+﻿@page "{ProductId?}"
+
+@model Week17.Pages.BasketModel
+@using Microsoft.AspNetCore.Identity
+@using Week17.Models
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@{
+}
+ 
+    <div class="flex-container">
+
+        @* Loop through each of the  products and display the relevant products *@
+
+        @foreach (var product in Model.BasketContents)
+        {      
+
+           @if(product.Owner == @UserManager.GetUserName(User)) {
+            <div class="productInformation">
+                @{
+                    Model.BasketTotal = Model.BasketTotal + @product.Price;
+                }
+                
+
+                <h3>@product.Name</h3>
+                <img class="product-image img-fluid img-thumbnail" src="@product.ProductImage" alt="Image of @product.Name" />
+                <p class="description">@product.Description</p>
+                <p class="price">£@product.Price</p>
+                                                      
+                <a asp-route-id="@product.Id" asp-page-handler="Delete"> Remove from basket</a>
+            </div>
+           }
+          }        
+
+      Total: @Model.BasketTotal
+
+     
+    </div>

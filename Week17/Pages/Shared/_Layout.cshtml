@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html  lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="~/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="~/media.css">
+    	<title> Candy King </title>
+	
+ </head>
+
+    <body>
+
+	<div class="bannerimage">
+	 <a href="index.html" class="adminlinks"> <img src="~/assets/banner.gif" alt="Candy king"> </a>
+	 
+	
+	</div>
+	
+	<div class="icons">
+
+		<a href="/Basket" class="adminlinks"> <img src="~/assets/carticon.jpg" class="carticon" title="Check out the products you have selected"> </a>
+
+		<a class="adminlinks" btn-danger order-button float-left" asp-page="/About">About us</a> 
+		@*   @if (User.IsInRole("Admin") || User.IsInRole("ProductManager")) {   *@
+		 <a class="adminlinks" asp-page="/ProductPanel">Manage products</a>
+		 <a class="adminlinks" btn-danger order-button float-left" asp-page="/ManageUser">Manage users</a> 
+
+		 @* } *@
+
+		 	<form class="adminlinks" asp-for="/Search"  action="/Product">
+			<input name="searchterm" value="Search for products"/>
+			<input type="submit" value="Search" />
+		</form>	
+	</div>
+		<div class="login">
+			<partial name="_LoginPartial" />	
+		</div>			
+	<nav>
+		       	<a href="" class="burgermenu"> ☰ </a>
+	
+			<ul class="navmenu">						
+		       		<li class="navmenuitem">
+			        	<div class="dropdownmenu"> Individual Sweets⌄
+						<ul class="dropdownmenuitems">							
+							<li> <a href="/Product/lollipops"> Lollipops </a> </li>
+							<li> <a href="/Product/boiledsweets"> Boiled sweets</a> </li>
+							<li> <a href="/Product/bonbons"> Bon-Bons </a> </li>
+							<li> <a href="/Product/liquorice"> Liquorice </a> </li>
+						</ul>
+					</div>			
+				</li>
+
+				<li class="navmenuitem">
+			        	<div class="dropdownmenu"> Chocolate⌄
+						<ul class="dropdownmenuitems">
+							<li> <a href="/Product/chocolatebar"> Chocolate bars</a> </li>
+							<li> <a href="/Product/chocolateboxes"> Boxes of chocolate </a> </li>
+							<li> <a href="/Product/mintchocolates"> Mint chocolates</a> </li>										
+						</ul>
+					</div>			
+				</li>
+		       		
+
+				<li class="navmenuitem"> 
+					<div class="dropdownmenu"> <a href="/Product/retrosweets"> Retro sweets </a> </div> 
+				 </li>	
+
+				<li class="navmenuitem"> 
+					<div class="dropdownmenu"> <a href="/Product/fudge"> Fudge </a> </div> 
+				 </li>	
+				<li class="navmenuitem">
+			        	<div class="dropdownmenu"> Seasonal items⌄
+						<ul class="dropdownmenuitems">
+							<li> <a href="/Product/valentines"> Valentine's day </a> </li>
+							<li> <a href="/Product/easter"> Easter </a> </li>
+							<li> <a href="/Product/halloween"> Halloween </a> </li>
+							<li> <a href="/Product/christmas"> Christmas </a> </li>
+						</ul>
+										
+						</div>
+		
+				</li>
+				   
+			</ul>
+							       		
+
+	</nav>
+
+		  @RenderBody()
+
+		  @RenderSection("Scripts", required: false)		  
+	</body>
+
+	<footer>
+		(c) Candy King Ltd. 2022. <a asp-page="/Privacy"> "Privacy policy" </a>
+	</footer>

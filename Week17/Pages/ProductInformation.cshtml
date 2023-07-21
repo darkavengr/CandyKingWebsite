@@ -1,0 +1,19 @@
+﻿@page "{Id}"
+@model Week17.Pages.ProductInformationModel
+@{
+}
+
+<div class="productinformation">
+</div>
+
+<div class="productinformation">
+                <h3>@Model.product.Name</h3>
+                                
+                <img class="enlargeditemimage" src="@Model.product.ProductImage" alt="Image of @Model.product.Name" />
+  
+                <p class="description">@Model.product.Description</p>
+                <p class="price">£@Model.product.Price</p>
+                           
+                <a class="cartlink" asp-page="/Basket" asp-route-ProductId=@Model.product.Id  asp-page-handler="AddToBasket"> <img src="~/assets/carticon.jpg" class="carticon"> </a>  
+ </div>
+

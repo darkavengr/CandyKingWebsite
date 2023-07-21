@@ -1,0 +1,32 @@
+﻿@page
+@model Week17.Pages.AdminPanelUpdateModel
+@{
+}
+
+<form method="post">
+
+    <label> Id </label><p>
+        <input type="text" asp-for="@Model.Products.Id" required readonly>
+    </p>
+
+    <label> Name</label><p>
+        <input type="text" asp-for="@Model.Products.Name" autofocus required>
+    </p>
+
+    <label> Description </label><p>
+        <input type="text" asp-for="@Model.Products.Description" required>
+    </p>
+
+    <label> Price </label><p>
+        <input type="text" asp-for="@Model.Products.Price" required>
+    </p>
+
+    <label> Description </label><p>
+        <input type="text" asp-for="@Model.Products.ProductImage" required>
+    </p>
+
+    <label> Type </label><p>
+            <input type="text" asp-for="@Model.Products.ProductType" required>
+    </p>
+    <input type="submit" value="Save" />
+</form>
